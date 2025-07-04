@@ -22,3 +22,15 @@ export interface Floor {
   children: Flat[];
 }
 
+export type ProjectNode = Floor | Flat | Area | LineItem;
+
+export function hasChildren(node: ProjectNode): node is Floor | Flat | Area {
+  return (
+    "children" in node &&
+    Array.isArray(node.children) &&
+    node.children.length > 0
+  );
+}
+  
+
+
