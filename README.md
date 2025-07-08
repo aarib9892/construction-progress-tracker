@@ -2,7 +2,8 @@
 
 ProTrack is a modern, interactive web application designed to streamline progress tracking for construction projects. It provides a clear, hierarchical view of work items, real-time progress updates, and an AI-powered assistant to suggest next steps.
 
-![ProTrack Screenshot](https://placehold.co/800x500.png)
+![image](https://github.com/user-attachments/assets/87e579c3-bab1-4d96-a9bc-75d97db14f9c)
+
 
 ## ✨ Core Features
 
@@ -59,7 +60,7 @@ The project follows a standard Next.js App Router structure with some key direct
 ├── src/
 │   ├── app/                # Next.js pages, layouts, and route definitions
 │   ├── components/
-│   │   ├── protrack/       # Core application components (Dashboard, Hierarchy, etc.)
+│   │   ├── core/       # Core application components (Dashboard, Hierarchy, etc.)
 │   │   └── ui/             # Reusable UI components from ShadCN
 │   ├── data/               # Mock data for the application
 │   ├── hooks/              # Custom React hooks
@@ -75,7 +76,6 @@ The project follows a standard Next.js App Router structure with some key direct
 In the `package.json` file, you can find several useful scripts:
 
 -   `npm run dev`: Starts the Next.js development server.
--   `npm run genkit:dev`: Starts the Genkit development server and UI.
 -   `npm run build`: Builds the application for production.
 -   `npm run start`: Starts the production server after a build.
 -   `npm run lint`: Lints the project files using Next.js's built-in ESLint configuration.
