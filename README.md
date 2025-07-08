@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProTrack - Construction Progress Tracking Dashboard
 
-## Getting Started
+ProTrack is a modern, interactive web application designed to streamline progress tracking for construction projects. It provides a clear, hierarchical view of work items, real-time progress updates, and an AI-powered assistant to suggest next steps.
 
-First, run the development server:
+![ProTrack Screenshot](https://placehold.co/800x500.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Core Features
+
+-   **Tabbed Interface**: Organize work into "Typical Areas," "Other Areas (with Quantity)," and "Other Areas (without Quantity)."
+-   **Hierarchical Accordion View**: Easily navigate through Floors, Flats, Areas, and down to individual Line Items.
+-   **Real-time Progress Tracking**: Automatically calculated progress bars and percentages give an at-a-glance view of completion status.
+-   **Smart Checkboxes**: Parent-child checkbox relationships allow for quick updating of entire sections. Checking a parent marks all its children as complete.
+-   **Efficient Navigation**: Quick actions to expand/collapse all accordions, reset progress for the current tab, and save your work.
+-   **Persistent State**: Progress is automatically saved to the browser's local storage, ensuring you can pick up where you left off.
+
+## 🚀 Tech Stack
+
+-   **Framework**: [Next.js](https://nextjs.org/) (with App Router)
+-   **UI Library**: [React](https://react.dev/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **UI Components**: [ShadCN UI](https://ui.shadcn.com/)
+-   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+
+## 🛠️ Getting Started
+
+Follow these instructions to get the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v18 or later recommended)
+-   [npm](https://www.npmjs.com/)
+
+### Installation & Setup
+
+1.  **Install dependencies:**
+    From the project's root directory, run:
+    ```bash
+    npm install
+    ```
+
+
+3.  **Run the Development Servers:**
+
+    -   **To run the Next.js application:**
+        ```bash
+        npm run dev
+        ```
+        The application will be available at `http://localhost:3000`.
+
+
+## 📂 Project Structure
+
+The project follows a standard Next.js App Router structure with some key directories:
+
+```
+.
+├── src/
+│   ├── app/                # Next.js pages, layouts, and route definitions
+│   ├── components/
+│   │   ├── protrack/       # Core application components (Dashboard, Hierarchy, etc.)
+│   │   └── ui/             # Reusable UI components from ShadCN
+│   ├── data/               # Mock data for the application
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions
+│   ├── store/              # Zustand state management stores
+│   └── types/              # TypeScript type definitions
+├── tailwind.config.ts      # Tailwind CSS configuration
+└── next.config.ts          # Next.js configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📜 Available Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In the `package.json` file, you can find several useful scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   `npm run dev`: Starts the Next.js development server.
+-   `npm run genkit:dev`: Starts the Genkit development server and UI.
+-   `npm run build`: Builds the application for production.
+-   `npm run start`: Starts the production server after a build.
+-   `npm run lint`: Lints the project files using Next.js's built-in ESLint configuration.

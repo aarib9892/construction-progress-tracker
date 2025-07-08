@@ -6,18 +6,20 @@ import { HierarchyItem } from "./hierarchy-item";
 
 interface ProgressViewProps {
   data: Floor[];
-
   expandedItems: string[];
   setExpandedItems: (items: string[]) => void;
   showQuantity?: boolean;
+  completedIds: Set<string>;
+  onCheckChange: (node: ProjectNode, isChecked: boolean) => void;
 }
 
 export function ProgressView({
   data,
-
   expandedItems,
   setExpandedItems,
   showQuantity = false,
+  completedIds,
+  onCheckChange
 }: ProgressViewProps) {
   if (!data || data.length === 0) {
     return (
@@ -39,8 +41,9 @@ export function ProgressView({
           key={floor.id}
           node={floor}
           level={0}
-  
           showQuantity={showQuantity}
+          completedIds = {completedIds}
+          onCheckChange={onCheckChange}
         />
       ))}
     </Accordion>

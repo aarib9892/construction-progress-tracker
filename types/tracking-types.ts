@@ -2,6 +2,10 @@ export interface LineItem {
   id: string;
   name: string;
   quantity?: number;
+  unit?: string;
+  status?: "COMPLETED" | "PENDING" | "IN_PROGRESS";
+  isCompleted: boolean;
+  remarks?: string;
 }
 
 export interface Area {
@@ -31,6 +35,19 @@ export function hasChildren(node: ProjectNode): node is Floor | Flat | Area {
     node.children.length > 0
   );
 }
-  
 
+// Helper to get all descendant leaf node (LineItem) objects under a given node
+export const getLeafNodes = (node: ProjectNode): LineItem[] => {
+  if (!hasChildren(node)) {
+    return [node as LineItem];
+  }
+  return node.children.flatMap((child) => getLeafNodes(child as ProjectNode));
+};
 
+// Helper to get all descendant leaf node (LineItem) IDs under a given node
+export const getLeafIds = (node: ProjectNode): string[] => {
+  if (!hasChildren(node)) {
+    return [node.id];
+  }
+  return node.children.flatMap((child) => getLeafIds(child as ProjectNode));
+};
